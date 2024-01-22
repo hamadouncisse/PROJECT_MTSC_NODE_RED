@@ -158,9 +158,17 @@ La figure suivante décrit le flow déployé :
 
 # Démonstration :
 
-La figure suivante décrit la détection d'une personne lors d'une capture de trame :
+La figure suivante décrit la détection d'une personne lors d'une capture de trame par les deux caméras IP :
 
 ![Alt text](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/Screenshot%20from%202024-01-22%2019-22-43.png "menu import")
+
+A partir de détection l'utilisateur récoit une notification via <b>Telegram</b> :
+
+| Notification 1                            | Notification  2                        |
+| ----------------------------------- | ----------------------------------- |
+| ![Notification1](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/Screenshot_2024-01-22-19-29-46-619_org.telegram.messenger.jpg) | ![notification2](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/Screenshot_2024-01-22-19-30-30-071_org.telegram.messenger.jpg) |
+
+La vidéo ci-dessus est la capture vidéo recu par l'utilisateur lors de la notification :
 
 https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/assets/104743493/2e5cb2b3-abe7-4068-81bc-81823f9251ba
 
