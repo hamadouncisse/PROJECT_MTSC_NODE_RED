@@ -147,6 +147,11 @@ Configuration des adresses IP des cameras : Dans notre cas, il existe plusieurs 
 </ul>
 
 # Déploiement :
-Après avoir effectué tous les prérequis ci dessus, il faut passer aux étapes suivantes :
-<ul>
+Après avoir effectué tous les prérequis ci dessus, il faut passer aux étapes suivant :
+<ol type="1">
+  <li>Déployer le flux avec le menu Node Red</li>
+  <li>Connecter le pc et les smarphones sur le meme réseau</li>
+  <li>Cliquer sur le noeud Start Network</li>
+</ol>
+
 
