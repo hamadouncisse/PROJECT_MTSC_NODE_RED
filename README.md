@@ -55,10 +55,9 @@ Ensuite il suffit d'ouvrir le navigateur et d'aller depuis votre naviguateur web
 </li>
 <li> Installation des bibliothèques de Node Red : Pour que le système fonctionne correctement, il est indispensable d'installer certaines bibliothèques. Dans le menu node red, il faut aller dans l'onglet manage palette, chercher et installer les bibliothèques suivantes :
 
-![Manage Palette1](https://www.google.com/url?sa=i&url=https%3A%2F%2Frandomnerdtutorials.com%2Fnode-red-manage-palette%2F&psig=AOvVaw1AEsRz3O3-eQglpiwvj73K&ust=1706039382386000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCODP9Zbi8YMDFQAAAAAdAAAAABAP "Manage palette dans Node Red 1")
-![Manage Palette1](https://www.google.com/url?sa=i&url=https%3A%2F%2Frandomnerdtutorials.com%2Fnode-red-manage-palette%2F&psig=AOvVaw1AEsRz3O3-eQglpiwvj73K&ust=1706039382386000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCODP9Zbi8YMDFQAAAAAdAAAAABAP "Manage palette dans Node Red 1")
+![Manage Palette1](/https://www.google.com/url?sa=i&url=https%3A%2F%2Frandomnerdtutorials.com%2Fnode-red-manage-palette%2F&psig=AOvVaw1AEsRz3O3-eQglpiwvj73K&ust=1706039382386000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCODP9Zbi8YMDFQAAAAAdAAAAABAP "Manage palette dans Node Red 1")
 
-![Manage Palette2](![image](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/assets/104743493/e0970096-a57d-4773-b7ff-a4232742560c)
+![Manage Palette2](![image](/https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/assets/104743493/e0970096-a57d-4773-b7ff-a4232742560c)
  "Manage palette dans Node Red 2")
 
 
