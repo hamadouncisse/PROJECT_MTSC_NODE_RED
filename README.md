@@ -23,26 +23,24 @@ Le fonctionnement du système est décrit comme suit :
 <ol type="1">
 <li>On démarre le système</li>
 <li>Pour chaque camera</li>
-  <ol type='i'>
-    <li>On capture une frame</li>
-    <li>On passe le frame au modèle de détection d'objection</li>
-    <li>Si la sortie du modèle est une personne alors </li>
-        <ol type='a'>
-          <li>Si c'est une détection avant rien alors </li>
-          <ul>
-          <li>On notifie l'utilisateur</li>
-          <li>On fait une capture vidéo de 30 sécondes que on envoie à l'utilisateur</li>
-          <li>On retourne à i</li>
-          </ul>
-          <li>Si c'est une détection alors qu'une capture est en cours alors</li>
-            <ul>
-            <li>On notifie pas l'utilisateur</li>
-            </ul>
-              
-        </ol>
-    <li>On retourne à i</li>
-  </ol>
-
+          <ol type='i'>
+            <li>On capture une frame</li>
+            <li>On passe le frame au modèle de détection d'objection</li>
+            <li>Si la sortie du modèle est une personne alors </li>
+                      <ol type='a'>
+                          <li>Si c'est une détection avant rien alors </li>
+                              <ul>
+                              <li>On notifie l'utilisateur</li>
+                              <li>On fait une capture vidéo de 30 sécondes que on envoie à l'utilisateur</li>
+                              <li>On retourne à i</li>
+                              </ul>
+                          <li>Si c'est une détection alors qu'une capture est en cours alors</li>
+                              <ul>
+                              <li>On notifie pas l'utilisateur</li>
+                              </ul>  
+                      </ol>
+            <li>On retourne à i </li>
+          </ol>
 </ol>
 
 # Prérequis
