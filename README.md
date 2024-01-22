@@ -73,7 +73,12 @@ Les bibliothèques sont :
 </ol>
 
 </li>
-<li>Importation du flow dans Node Red : 
+
+<li>Importation du flow dans Node Red : Il suffit de selectionner l'onglet <b>Import</b> dans le menu de node red. Ensuite il faut sélectionner le fichier json à importer depuis l'explorateur de fichier.
+
+
+![menu import](https://nodered.org/docs/user-guide/editor/images/editor-import.png "menu import")
+
 
 </li>
 
