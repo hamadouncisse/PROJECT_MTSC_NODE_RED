@@ -16,7 +16,9 @@ Bienvenue dans notre solution de détection d'intrusion. Notre projet offre une 
 # Prérequis
 <ul>
   <li><b>Système d'exploition :</b> Linux</li>
-  <li>Disposer de docker installer sur votre machine. Si ne l'avez voilà le <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-fr">lien</a> vers un tutoriel très facile pour l'installer.</li>
+  <li>Disposer de docker installer sur votre machine. Si ne l'avez voilà pas, voilà un <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-fr">lien</a> vers un tutoriel très facile pour l'installer.</li>
+  <li>Disposer d'un réseau connecté à internet (Indispensable pour pouvoir envoyer les notifications via l'api Telegram)</li>
+  <li>Disposer deux camera IP au moins. Dans notre cas, nous avons simuler nos smartphones comme camera à l'aide de l'application <a href="https://play.google.com/store/apps/details?id=com.pas.webcam&hl=fr&gl=US">IP Webcam</a> disponible sur playstore et Applestore.</li>
 </ul>
 
 
