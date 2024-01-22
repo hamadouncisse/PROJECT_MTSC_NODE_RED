@@ -6,4 +6,5 @@ Bienvenue dans notre solution innovante de détection d'intrusion, propulsée pa
 <b>Notification Instantanée :</b> L'utilisateur est informé en temps réel dès qu'une activité suspecte est détectée, garantissant une réponse rapide et efficace.
 
 <b>Visualisation en Direct :</b> Expérimentez la puissance de la visualisation en direct avec un accès immédiat à la sortie de la caméra concernée, offrant une compréhension visuelle précise de la situation en cours.
+
 <b>Optimisation de traffic : </b> Notre système est concu de telle sorte à optimiser les trafics sur le réseau en réduisant au maximum les répétitions d'alertes liés à une meme intrusion.
