@@ -133,11 +133,10 @@ Configuration des adresses IP des cameras : Dans notre cas, il existe plusieurs 
   <li>Capture video</li>
 </ol>
 
+| Decode RTSP stream                            | Notification                            |
+| ----------------------------------- | ----------------------------------- |
+| ![Decode RTSP stream](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/exec.png) | ![notification](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/save1.png) |
 
-<div align="center">
-  <img src="https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/exec.png" width="412px"/>
-
-<img src="https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/save1.png" width="412px" /></div>
 
 
 <br>
