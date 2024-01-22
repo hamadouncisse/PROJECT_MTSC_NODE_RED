@@ -36,7 +36,7 @@ Après avoir effectué tous les prérequis ci dessus, il faut passer aux étapes
   <br>
  Clonez le dépôt actuel. 
  ```
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+git clone https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED.git
 ```
   
 </li>
