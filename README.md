@@ -134,7 +134,7 @@ Configuration des adresses IP des cameras : Dans notre cas, il existe plusieurs 
 </ol>
 
 
-<div class="center">
+<div align="center">
   <img src="https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/exec.png" width="412px"/>
 <
 
