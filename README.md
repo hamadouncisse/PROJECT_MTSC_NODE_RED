@@ -9,14 +9,14 @@ Bienvenue dans notre solution de détection d'intrusion. Notre projet offre une 
 </ul>
 
 # Principales fonctionnalités
-<b>Détection d'Intrusion Intelligente :</b> Grâce au modèle de détection d'object (coco-ssd), notre système identifie de manière fiable les intrusions, garantissant une réaction proactive à toute menace potentielle.
+<b>Détection d'Intrusion Intelligente :</b> Grâce au modèle de <b>détection d'object (coco-ssd)</b>, notre système identifie de manière fiable les intrusions, garantissant une réaction proactive à toute menace potentielle.
 
-<b>Notification Instantanée :</b> L'utilisateur est informé en temps réel dès qu'une activité suspecte est détectée, garantissant une réponse rapide et efficace.
+<b>Notification Instantanée :</b> L'utilisateur est informé en temps réel dès qu'une activité suspecte est détectée, garantissant une réponse rapide et efficace. On utilise <b>Telegram</b> pour l'envoie des notifications et des capture vidéos.
 
 
-<b>Visualisation en Direct :</b> Expérimentez la puissance de la visualisation en direct avec un accès immédiat à la sortie de la caméra concernée, offrant une compréhension visuelle précise de la situation en cours.
+<b>Visualisation en Direct :</b> Le système permet un accès immédiat à la sortie de la caméra concernée, offrant une compréhension visuelle précise de la situation en cours. La sortie de la caméra est streamée en direct sur une page web accéssible de partout.
 
-<b>Optimisation de traffic : </b> Notre système est concu de telle sorte à optimiser les trafics sur le réseau en réduisant au maximum les répétitions d'alertes liés à une meme intrusion.
+<b>Optimisation de trafic : </b> Notre système est concu de telle sorte à optimiser les trafics sur le réseau en réduisant au maximum les répétitions d'alertes liés à une meme intrusion. On a mis en place un filtre permettant de filter le trafic rédondant.
 
 # Prérequis
 <ul>
@@ -63,13 +63,21 @@ Ensuite il suffit d'ouvrir le navigateur et d'aller depuis votre naviguateur web
 Les bibliothèques sont : 
 <ol type="1">
   <li>node-red-contrib-browser-utils</li>
+  
   <li>node-red-contrib-image-tools</li>
+  
   <li>node-red-contrib-tf-function</li>
+  
   <li>node-red-contrib-tf-model</li>
+  
   <li>node-red-contrib-tfjs-coco-ssd</li>
+  
   <li>node-red-contrib-telegrambot</li>
+  
   <li>node-red-contrib-image-output</li>
+  
   <li>node-red-node-rbe</li>
+  
 </ol>
 
 </li>
@@ -78,10 +86,30 @@ Les bibliothèques sont :
   
 ![Alt text](https://nodered.org/docs/user-guide/editor/images/editor-import.png "menu import")
 
-<b style="text-center">Une visulation du flow importé est :</b>
+<b style="text-center">Une visulation du flow importé est donnée par la capture suivante :</b>
 
 ![Alt text](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/all.png "menu import")
 
+</li>
+<li>
+Configuration des adresses IP des cameras : Dans notre cas, il existe plusieurs noeuds ou l'adresse IP de la caméra est spécifier pour capturer le flux vidéo. Pour l'adapter au votre, il faut remplacer les adresses présentes par les votres dans le noeud suivant :
+  
+<ol type="1">
+  <li>Decode RTSP stream 2</li>
+  
+  <li>function</li>
+  
+  <li>notification</li>
+  
+  <li>notification2</li>
+  
+  <li>Capture video</li>
+</ol>
+
+<br>
+<b>Il important de savoir que dans notre flow actuel, on capture le flux vidéo depuis deux caméra, donc dans votre cas par exemple le premier <b>Decode RTSP stream 2</b> on specifie l'adresse IP de la premiere caméra et pour le sécond <b>Decode RTSP stream 2</b> on spécifie l'adresse IP de la séconde caméra.
+
+  
 </li>
 
   
