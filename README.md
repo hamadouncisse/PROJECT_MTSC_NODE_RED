@@ -26,13 +26,20 @@ Le fonctionnement du système est décrit comme suit :
   <ol type='i'>
     <li>On capture une frame</li>
     <li>On passe le frame au modèle de détection d'objection</li>
-    <li>Si la sortie du modèle est une personne </li>
-        <ul type='a'>
+    <li>Si la sortie du modèle est une personne alors </li>
+        <ol type='a'>
+          <li>Si c'est une détection avant rien alors </li>
+          <ul>
           <li>On notifie l'utilisateur</li>
           <li>On fait une capture vidéo de 30 sécondes que on envoie à l'utilisateur</li>
-          <li>On retourne à 2</li>
-        </ul>
-    <li>On retourne à 2</li>
+          <li>On retourne à i</li>
+          <ul>
+          <li>Si c'est une détection alors qu'une capture est en cours alors</li>
+            <ul>
+            <li>On notifie pas l'utilisateur</li>
+            <ul>
+        </ol>
+    <li>On retourne à i</li>
   </ol>
 
 
