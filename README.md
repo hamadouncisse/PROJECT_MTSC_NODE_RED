@@ -18,6 +18,26 @@ Bienvenue dans notre solution de détection d'intrusion. Notre projet offre une 
 
 <b>Optimisation de trafic : </b> Notre système est concu de telle sorte à optimiser les trafics sur le réseau en réduisant au maximum les répétitions d'alertes liés à une meme intrusion. On a mis en place un filtre permettant de filter le trafic rédondant.
 
+# Fonctionnement :
+Le fonctionnement du système est décrit comme suit :
+<ol type="1">
+<li>On démarre le système</li>
+<li>Pour chaque camera</li>
+  <ol type='i'>
+    <li>On capture une frame</li>
+    <li>On passe le frame au modèle de détection d'objection</li>
+    <li>Si la sortie du modèle est une personne </li>
+        <ul type='a'>
+          <li>On notifie l'utilisateur</li>
+          <li>On fait une capture vidéo de 30 sécondes que on envoie à l'utilisateur</li>
+          <li>On retourne à 2</li>
+        </ul>
+    <li>On retourne à 2</li>
+  </ol>
+
+
+</ol>
+
 # Prérequis
 <ul>
   <li>Système d'exploition : Linux (Dans notre cas Lubuntu)</li>
@@ -108,10 +128,12 @@ Configuration des adresses IP des cameras : Dans notre cas, il existe plusieurs 
 
 <br>
 <b>Il important de savoir que dans notre flow actuel, on capture le flux vidéo depuis deux caméra, donc dans votre cas par exemple le premier <b>Decode RTSP stream 2</b> on specifie l'adresse IP de la premiere caméra et pour le sécond <b>Decode RTSP stream 2</b> on spécifie l'adresse IP de la séconde caméra.
-
-  
+ 
 </li>
-
   
 </ul>
+
+# Déploiement :
+Après avoir effectué tous les prérequis ci dessus, il faut passer aux étapes suivantes :
+<ul>
 
