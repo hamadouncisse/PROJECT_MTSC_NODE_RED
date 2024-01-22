@@ -135,6 +135,26 @@ Configuration des adresses IP des cameras : Dans notre cas, il existe plusieurs 
 | ----------------------------------- | ----------------------------------- |
 | ![Decode RTSP stream](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/exec.png) | ![notification](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/save1.png) |
 
+Dans le Decode RTSP Stream on a cette commande :
+
+`` ffmpeg -i http://192.168.43.164:8080/video -r 10 -t 30 -y -c:v libx264 -c:a copy /data/video2.mp4 ``
+
+
+<b>- ffmpeg:</b> Le nom du programme que vous exécutez, qui est FFmpeg dans ce cas.
+
+<b>-i http://192.168.43.164:8080/video:</b> Spécifie l'URL du flux vidéo en tant qu'entrée pour la commande.
+
+<b>-r 10:</b>  Définit le taux de trame (frame rate) de la vidéo de sortie à 10 images par seconde.
+
+<b>-t 30:</b>  Limite la durée de la vidéo de sortie à 30 secondes.
+
+<b>-y:</b>  Force l'écrasement du fichier de sortie s'il existe déjà, sans demander de confirmation.
+
+<b>-c:v libx264:</b> Spécifie le codec vidéo à utiliser pour la sortie. Dans ce cas, le codec H.264 (libx264) est utilisé. Cela permet de réencoder la vidéo avec le codec H.264.
+
+<b>-c:a copy:</b> Copie la piste audio de l'entrée vers la sortie sans réencoder. Si la source n'a pas de piste audio, cela n'affectera pas le résultat.
+
+<b>/data/video2.mp4:</b> Chemin et nom du fichier de sortie MP4 où la vidéo résultante sera enregistrée.
 
 
 <br>
