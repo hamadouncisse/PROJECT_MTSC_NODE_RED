@@ -135,7 +135,9 @@ Configuration des adresses IP des cameras : Dans notre cas, il existe plusieurs 
 
 <div class="row">
 
-<div class="col"><img src="https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/exec.png"></div>
+<div class="col">
+  <img src="https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/exec.png">
+</div>
 
 
 <div class="col"><img src="https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/save1.png"></div>
