@@ -158,8 +158,9 @@ La figure suivante décrit le flow déployé :
 
 # Démonstration :
 
-Après avoir effectué tous les prérequis ci dessus, il faut passer aux étapes suivant :
+La figure suivante décrit la détection d'une personne lors d'une capture de trame :
 
+![Alt text](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/Screenshot%20from%202024-01-22%2019-22-43.png "menu import")
 
 https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/assets/104743493/2e5cb2b3-abe7-4068-81bc-81823f9251ba
 
