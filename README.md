@@ -160,7 +160,8 @@ La figure suivante décrit le flow déployé :
 
 Après avoir effectué tous les prérequis ci dessus, il faut passer aux étapes suivant :
 
-<video src="https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/4_5870882064957444663.mp4" width=180/>
+ <video src="https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/4_5870882064957444663.mp4"></video>
+
 
 
 
