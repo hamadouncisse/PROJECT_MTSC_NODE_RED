@@ -25,23 +25,22 @@ Bienvenue dans notre solution de détection d'intrusion. Notre projet offre une 
   <li>Disposer d'un réseau connecté à internet (Indispensable pour pouvoir envoyer les notifications via l'api Telegram)</li>
   <li>Disposer deux camera IP au moins. Dans notre cas, nous avons simuler nos smartphones comme camera à l'aide de l'application <a href="https://play.google.com/store/apps/details?id=com.pas.webcam&hl=fr&gl=US">IP Webcam</a> disponible sur playstore et Applestore.</li>
   <li>Créer un Bot telegram pour pouvoir l'intégrer au système pour les notifications. Voici un lien vers une <a href="https://www.youtube.com/watch?v=rOopUOmsdW8">vidéo</a> pour en créer un.</li>
+  <li>Installer Git pour pouvoir cloner le dépot actuel de ce projet et installer le projet.</li>
 </ul>
 
 
 # Comment Commencer :
 Après avoir effectué tous les prérequis ci dessus, il faut passer aux étapes suivantes :
 <ul>
-<li>Installation de Node Red : Notre image docker est basé sur l'image <a href="https://hub.docker.com/layers/nodered/node-red/3.1.0-debian/images/sha256-58529234bb6dc77cf443f92eda90ff268ee84f9268b26da2fd383d5607d2d5c7?context=explore">nodered/node-red:3.1.0-debian</a> qu'on a customisé pour ajouter la bibliothèque <b>FFmpeg</b> pour capturer et manipuler les flux vidéos en stréaming. Pour l'installer, on veut :
+<li>Installation de Node Red : Notre image docker est basé sur l'image <a href="https://hub.docker.com/layers/nodered/node-red/3.1.0-debian/images/sha256-58529234bb6dc77cf443f92eda90ff268ee84f9268b26da2fd383d5607d2d5c7?context=explore">nodered/node-red:3.1.0-debian</a> qu'on a customisé pour ajouter la bibliothèque <b>FFmpeg</b> pour capturer et manipuler les flux vidéos en stréaming. Pour l'installation du container, on fait :
   <br>
-  
+ Clonez le dépôt actuel. 
+ ```
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
   
 </li>
 
   
 </ul>
-Clonez le dépôt et suivez les instructions d'installation pour déployer rapidement votre propre système de détection d'intrusion.
-
-Configurez les paramètres selon votre environnement spécifique, en profitant des fonctionnalités de personnalisation de Node-RED.
-
-Explorez les multiples scénarios d'utilisation possibles et découvrez comment notre solution peut être adaptée pour répondre à vos exigences uniques.
 
