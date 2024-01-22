@@ -132,6 +132,12 @@ Configuration des adresses IP des cameras : Dans notre cas, il existe plusieurs 
   
   <li>Capture video</li>
 </ol>
+<div class="row">
+<div class="col"><img src="https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/exec.png"></div>
+
+
+<div class="col"><img src=""></div>
+</div>
 
 <br>
 <b>Il important de savoir que dans notre flow actuel, on capture le flux vidéo depuis deux caméra, donc dans votre cas par exemple le premier <b>Decode RTSP stream 2</b> on specifie l'adresse IP de la premiere caméra et pour le sécond <b>Decode RTSP stream 2</b> on spécifie l'adresse IP de la séconde caméra.
