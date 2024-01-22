@@ -61,7 +61,7 @@ Ensuite il suffit d'ouvrir le navigateur et d'aller depuis votre naviguateur web
 ![image1](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/assets/104743493/e0970096-a57d-4773-b7ff-a4232742560c "manage palette 2")
 
 Les bibliothèques sont : 
-<ol>
+<ol type="1">
   <li>node-red-contrib-browser-utils</li>
   <li>node-red-contrib-image-tools</li>
   <li>node-red-contrib-tf-function</li>
@@ -72,7 +72,9 @@ Les bibliothèques sont :
   <li>node-red-node-rbe</li>
 </ol>
 
-  
+</li>
+<li>Importation du flow dans Node Red : 
+
 </li>
 
   
