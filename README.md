@@ -33,15 +33,15 @@ Le fonctionnement du système est décrit comme suit :
           <li>On notifie l'utilisateur</li>
           <li>On fait une capture vidéo de 30 sécondes que on envoie à l'utilisateur</li>
           <li>On retourne à i</li>
-          <ul>
+          </ul>
           <li>Si c'est une détection alors qu'une capture est en cours alors</li>
             <ul>
             <li>On notifie pas l'utilisateur</li>
-            <ul>
+            </ul>
+              
         </ol>
     <li>On retourne à i</li>
   </ol>
-
 
 </ol>
 
