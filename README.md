@@ -34,9 +34,26 @@ Après avoir effectué tous les prérequis ci dessus, il faut passer aux étapes
 <ul>
 <li>Installation de Node Red : Notre image docker est basé sur l'image <a href="https://hub.docker.com/layers/nodered/node-red/3.1.0-debian/images/sha256-58529234bb6dc77cf443f92eda90ff268ee84f9268b26da2fd383d5607d2d5c7?context=explore">nodered/node-red:3.1.0-debian</a> qu'on a customisé pour ajouter la bibliothèque <b>FFmpeg</b> pour capturer et manipuler les flux vidéos en stréaming. Pour l'installation du container, on fait :
   <br>
- Clonez le dépôt actuel. 
+ Cloner le dépôt actuel
   
 `` git clone https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED.git ``
+
+Aller dans le répertoire node_red
+
+`` cd node_red ``
+
+Construiser l'image docker
+
+``  docker image build -t "test_red_node" .  ``
+
+Lancer le conteneur docker
+
+`` docker run -p 1880:1880 -v node_red_data:/data test_red_node ``
+
+Ensuite il suffit d'ouvrir le navigateur et d'aller depuis votre naviguateur web sur le lien http://127.0.0.1:1880/ pour démarrer node.
+ 
+</li>
+<li> Installation des bibliothèques de Node Red :
   
 </li>
 
