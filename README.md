@@ -56,8 +56,11 @@ Ensuite il suffit d'ouvrir le navigateur et d'aller depuis votre naviguateur web
 <li> Installation des bibliothèques de Node Red : Pour que le système fonctionne correctement, il est indispensable d'installer certaines bibliothèques. Dans le menu node red, il faut aller dans l'onglet manage palette, chercher et installer les bibliothèques suivantes :
 
 
-![image](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/assets/104743493/3f8a5d6a-6f4f-4214-8898-4aef66c2c710 "manage palette")
-<img src="https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/assets/104743493/e0970096-a57d-4773-b7ff-a4232742560c" width="50%" height="50%">
+![image](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/assets/104743493/3f8a5d6a-6f4f-4214-8898-4aef66c2c710 "manage palette 1")
+
+![image1](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/assets/104743493/e0970096-a57d-4773-b7ff-a4232742560c "manage palette 2")
+
+
 
   
 </li>
