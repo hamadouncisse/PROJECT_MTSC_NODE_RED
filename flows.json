@@ -1,0 +1,808 @@
+[
+    {
+        "id": "8ef5be51.c4dce8",
+        "type": "tab",
+        "label": "Flow 9",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "29db2cc.5d70fd4",
+        "type": "image",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "width": "200",
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 660,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "103799b0.fd46de",
+        "type": "exec",
+        "z": "8ef5be51.c4dce8",
+        "command": "ffmpeg  -y -i \"http://192.168.43.164:8080/video\" -vframes 1  /data/2.jpg",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Decode RTSP stream 2",
+        "x": 430,
+        "y": 240,
+        "wires": [
+            [
+                "e99a4ceb.4d21a"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e99a4ceb.4d21a",
+        "type": "file in",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "filename": "/data/2.jpg",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 290,
+        "y": 80,
+        "wires": [
+            [
+                "29db2cc.5d70fd4",
+                "19386a9c.ced7e5"
+            ]
+        ]
+    },
+    {
+        "id": "61a39d2f.c86af4",
+        "type": "image",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "width": "200",
+        "data": "image",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 960,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "525648f2.e2368",
+        "type": "debug",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "classes",
+        "targetType": "msg",
+        "statusVal": "classes",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "19386a9c.ced7e5",
+        "type": "tensorflowCoco",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "modelUrl": "http://localhost:1880/coco/model.json",
+        "scoreThreshold": 0.5,
+        "passthru": "bbox",
+        "lineColour": "magenta",
+        "x": 650,
+        "y": 120,
+        "wires": [
+            [
+                "525648f2.e2368",
+                "61a39d2f.c86af4",
+                "e1fb0acb.8efcf8",
+                "8cd29bc3e47c9e74",
+                "6c6746c238df9d4a"
+            ]
+        ]
+    },
+    {
+        "id": "e1fb0acb.8efcf8",
+        "type": "debug",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "scoreThreshold",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "81677106.a7867",
+        "type": "function",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "func": "var sThreshold = msg.scoreThreshold; //scoreThreshold\n\nif (sThreshold >= 0.5)\n{\n\n    \n    msg.payload={\n    \"chatId\":5896266992,\n    \"type\":\"message\",\n    \"content\" :\"person detected at the cam 1 \\n Live video link <a href='http://192.168.43.164:8080/video'> Live video link</a>\",\n    \"options\":{parse_mode:\"HTML\"}\n    };\n    return msg;\n} \nelse\n{\n    return;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1620,
+        "y": 180,
+        "wires": [
+            [
+                "3ca346e0645b368d",
+                "66531b45e6414e6d",
+                "66c53f10dc5e0762"
+            ]
+        ]
+    },
+    {
+        "id": "a5c61042.bb93a8",
+        "type": "switch",
+        "z": "8ef5be51.c4dce8",
+        "name": "Check For person",
+        "property": "classes.person",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1350,
+        "y": 220,
+        "wires": [
+            [
+                "81677106.a7867"
+            ]
+        ]
+    },
+    {
+        "id": "8cd29bc3e47c9e74",
+        "type": "rbe",
+        "z": "8ef5be51.c4dce8",
+        "name": "filter",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "classes",
+        "topi": "topic",
+        "x": 1230,
+        "y": 280,
+        "wires": [
+            [
+                "a5c61042.bb93a8"
+            ]
+        ]
+    },
+    {
+        "id": "3ca346e0645b368d",
+        "type": "telegram sender",
+        "z": "8ef5be51.c4dce8",
+        "name": "notification",
+        "bot": "f1ed1c8bb73bd874",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1950,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "66531b45e6414e6d",
+        "type": "debug",
+        "z": "8ef5be51.c4dce8",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1880,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "d1c9c3575dadbbea",
+        "type": "function",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "func": " \n    msg.payload={\n    \"chatId\":5896266992,\n    \"type\":\"video\",\n    \"content\" :\"/data/video.mp4\",\n    };\n    return msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1860,
+        "y": 460,
+        "wires": [
+            [
+                "9d6aab924723f8b5"
+            ]
+        ]
+    },
+    {
+        "id": "0cc6474a523c08a7",
+        "type": "exec",
+        "z": "8ef5be51.c4dce8",
+        "command": "ffmpeg -i http://192.168.43.164:8080/video -r 10 -t 30 -y -c:v libx264 -c:a copy /data/video.mp4",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Capture video",
+        "x": 1660,
+        "y": 480,
+        "wires": [
+            [
+                "d1c9c3575dadbbea"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "9d6aab924723f8b5",
+        "type": "telegram sender",
+        "z": "8ef5be51.c4dce8",
+        "name": "notification2",
+        "bot": "f1ed1c8bb73bd874",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 2070,
+        "y": 400,
+        "wires": [
+            [
+                "ddddef16c61e271f"
+            ]
+        ]
+    },
+    {
+        "id": "66c53f10dc5e0762",
+        "type": "ui_button",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "group": "675036dd.603328",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1610,
+        "y": 380,
+        "wires": [
+            [
+                "0cc6474a523c08a7"
+            ]
+        ]
+    },
+    {
+        "id": "ddddef16c61e271f",
+        "type": "ui_button",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "group": "675036dd.603328",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Demarrer cam1",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 180,
+        "y": 320,
+        "wires": [
+            [
+                "103799b0.fd46de"
+            ]
+        ]
+    },
+    {
+        "id": "6c6746c238df9d4a",
+        "type": "switch",
+        "z": "8ef5be51.c4dce8",
+        "name": "Check For others",
+        "property": "classes.person",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": true,
+        "outputs": 1,
+        "x": 150,
+        "y": 20,
+        "wires": [
+            [
+                "ddddef16c61e271f"
+            ]
+        ]
+    },
+    {
+        "id": "186ed445bf9484e9",
+        "type": "inject",
+        "z": "8ef5be51.c4dce8",
+        "name": "start network",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 580,
+        "wires": [
+            [
+                "ddddef16c61e271f",
+                "6dee01b33e138444"
+            ]
+        ]
+    },
+    {
+        "id": "11c635e19426719e",
+        "type": "image",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "width": "200",
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 840,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "b28864733a6f9fc0",
+        "type": "exec",
+        "z": "8ef5be51.c4dce8",
+        "command": "ffmpeg  -y -i \"http://192.168.43.164:8080/video\" -vframes 1  /data/3.jpg",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Decode RTSP stream 2",
+        "x": 610,
+        "y": 940,
+        "wires": [
+            [
+                "c2d603515e3e731e"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c2d603515e3e731e",
+        "type": "file in",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "filename": "/data/3.jpg",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 470,
+        "y": 780,
+        "wires": [
+            [
+                "11c635e19426719e",
+                "49042039a6e9a932"
+            ]
+        ]
+    },
+    {
+        "id": "96fc0aa53f4ad551",
+        "type": "image",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "width": "200",
+        "data": "image",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 1140,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "b220323e81836c20",
+        "type": "debug",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "classes",
+        "targetType": "msg",
+        "statusVal": "classes",
+        "statusType": "auto",
+        "x": 1270,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "49042039a6e9a932",
+        "type": "tensorflowCoco",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "modelUrl": "http://localhost:1880/coco/model.json",
+        "scoreThreshold": 0.5,
+        "passthru": "bbox",
+        "lineColour": "magenta",
+        "x": 830,
+        "y": 820,
+        "wires": [
+            [
+                "b220323e81836c20",
+                "96fc0aa53f4ad551",
+                "472d5387f4141456",
+                "f3bb6d96ea6b9815",
+                "7268f19355a1cc28"
+            ]
+        ]
+    },
+    {
+        "id": "472d5387f4141456",
+        "type": "debug",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "scoreThreshold",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "5e5ef5c3dedf2a1b",
+        "type": "function",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "func": "var sThreshold = msg.scoreThreshold; //scoreThreshold\n\nif (sThreshold >= 0.5)\n{\n\n    \n    msg.payload={\n    \"chatId\":5896266992,\n    \"type\":\"message\",\n    \"content\" :\"person detected at the cam 2 \\n Live video link <a href='http://192.168.43.164:8080/video'> Live video link</a>\",\n    \"options\":{parse_mode:\"HTML\"}\n    };\n    return msg;\n} \nelse\n{\n    return;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1800,
+        "y": 880,
+        "wires": [
+            [
+                "b53185b30069e6d1",
+                "eb9725c2a8b36089",
+                "668c83fb85e3886c"
+            ]
+        ]
+    },
+    {
+        "id": "d5bf7de42d5fade5",
+        "type": "switch",
+        "z": "8ef5be51.c4dce8",
+        "name": "Check For person",
+        "property": "classes.person",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1530,
+        "y": 920,
+        "wires": [
+            [
+                "5e5ef5c3dedf2a1b"
+            ]
+        ]
+    },
+    {
+        "id": "f3bb6d96ea6b9815",
+        "type": "rbe",
+        "z": "8ef5be51.c4dce8",
+        "name": "filter",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "classes",
+        "topi": "topic",
+        "x": 1410,
+        "y": 980,
+        "wires": [
+            [
+                "d5bf7de42d5fade5"
+            ]
+        ]
+    },
+    {
+        "id": "b53185b30069e6d1",
+        "type": "telegram sender",
+        "z": "8ef5be51.c4dce8",
+        "name": "notification",
+        "bot": "f1ed1c8bb73bd874",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 2130,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eb9725c2a8b36089",
+        "type": "debug",
+        "z": "8ef5be51.c4dce8",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2060,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "a9808ad16c3e127f",
+        "type": "function",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "func": " \n    msg.payload={\n    \"chatId\":5896266992,\n    \"type\":\"video\",\n    \"content\" :\"/data/video2.mp4\",\n    };\n    return msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2040,
+        "y": 1160,
+        "wires": [
+            [
+                "c2dc7f1869e19a9a"
+            ]
+        ]
+    },
+    {
+        "id": "356e7c0318754858",
+        "type": "exec",
+        "z": "8ef5be51.c4dce8",
+        "command": "ffmpeg -i http://192.168.43.164:8080/video -r 10 -t 30 -y -c:v libx264 -c:a copy /data/video2.mp4",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Capture video",
+        "x": 1840,
+        "y": 1180,
+        "wires": [
+            [
+                "a9808ad16c3e127f"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c2dc7f1869e19a9a",
+        "type": "telegram sender",
+        "z": "8ef5be51.c4dce8",
+        "name": "notification2",
+        "bot": "f1ed1c8bb73bd874",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 2250,
+        "y": 1100,
+        "wires": [
+            [
+                "6dee01b33e138444"
+            ]
+        ]
+    },
+    {
+        "id": "668c83fb85e3886c",
+        "type": "ui_button",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "group": "675036dd.603328",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1790,
+        "y": 1080,
+        "wires": [
+            [
+                "356e7c0318754858"
+            ]
+        ]
+    },
+    {
+        "id": "6dee01b33e138444",
+        "type": "ui_button",
+        "z": "8ef5be51.c4dce8",
+        "name": "",
+        "group": "675036dd.603328",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Demarrer cam2",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 360,
+        "y": 1020,
+        "wires": [
+            [
+                "b28864733a6f9fc0"
+            ]
+        ]
+    },
+    {
+        "id": "7268f19355a1cc28",
+        "type": "switch",
+        "z": "8ef5be51.c4dce8",
+        "name": "Check For others",
+        "property": "classes.person",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": true,
+        "outputs": 1,
+        "x": 330,
+        "y": 720,
+        "wires": [
+            [
+                "6dee01b33e138444"
+            ]
+        ]
+    },
+    {
+        "id": "f1ed1c8bb73bd874",
+        "type": "telegram bot",
+        "botname": "Amar",
+        "usernames": "Amar_mtsc_bot",
+        "chatids": "5896266992",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "675036dd.603328",
+        "type": "ui_group",
+        "name": "Frame Grab",
+        "tab": "7af2d9c8.0a9148",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "7af2d9c8.0a9148",
+        "type": "ui_tab",
+        "name": "NVR",
+        "icon": "dashboard",
+        "order": 13
+    }
+]
