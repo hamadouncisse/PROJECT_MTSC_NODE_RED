@@ -140,7 +140,7 @@ Configuration des adresses IP des cameras : Dans notre cas, il existe plusieurs 
 
 
 <br>
-<b>Il important de savoir que dans notre flow actuel, on capture le flux vidéo depuis deux caméra, donc dans votre cas par exemple le premier <b>Decode RTSP stream 2</b> on specifie l'adresse IP de la premiere caméra et pour le sécond <b>Decode RTSP stream 2</b> on spécifie l'adresse IP de la séconde caméra.
+<b>Il important de savoir que dans notre flow actuel, on capture le flux vidéo depuis deux caméra, donc dans votre cas par exemple le premier <b>Decode RTSP stream 2</b> on specifie l'adresse IP de la premiere caméra et pour le sécond <b>Decode RTSP stream 2</b> on spécifie l'adresse IP de la séconde caméra.</b>
  
 </li>
   
@@ -153,5 +153,18 @@ Après avoir effectué tous les prérequis ci dessus, il faut passer aux étapes
   <li>Connecter le pc et les smarphones sur le meme réseau</li>
   <li>Cliquer sur le noeud Start Network</li>
 </ol>
+
+La figure suivante décrit le flow déployé :
+
+![Alt text](https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/Screenshot%20from%202024-01-22%2019-21-11.png "menu import")
+
+# Démonstration :
+
+Après avoir effectué tous les prérequis ci dessus, il faut passer aux étapes suivant :
+
+<video src='https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/4_5870882064957444663.mp4' width=180/>
+
+
+
 
 
