@@ -160,9 +160,8 @@ La figure suivante décrit le flow déployé :
 
 Après avoir effectué tous les prérequis ci dessus, il faut passer aux étapes suivant :
 
- https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/blob/main/4_5870882064957444663.mp4
 
-
+https://github.com/hamadouncisse/PROJECT_MTSC_NODE_RED/assets/104743493/2e5cb2b3-abe7-4068-81bc-81823f9251ba
 
 
 
