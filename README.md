@@ -11,6 +11,10 @@ Bienvenue dans notre solution de détection d'intrusion. Notre projet offre une 
   <li>IWOBA REBET Emmanuel</li>
 </ul>
 
+# AUTEURS - ETUDIANT M2 CNS SOUS PARCOURS SR
+
+MASSINISSA Hamidi
+
 # Principales fonctionnalités
 
 <b>Détection d'Intrusion Intelligente :</b> Grâce au modèle de <b>détection d'object (coco-ssd)</b>, notre système identifie de manière fiable les intrusions, garantissant une réaction proactive à toute menace potentielle.
